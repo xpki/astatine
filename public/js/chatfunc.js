@@ -1,7 +1,9 @@
 const socket = io({ path: "/socket.io/" });
 const chat = document.getElementById("chat");
-
+const nickInput = document.getElementById("nickname");
+const setNickBtn = document.getElementById("setNickBtn");
 let userId = localStorage.getItem("userId");
+
 if (!userId) {
   userId = Math.floor(1000000 + Math.random() * 9000000);
   localStorage.setItem("userId", userId);
@@ -24,7 +26,7 @@ function escapeHtml(str) {
 function addLine({ sender, message, ts }) {
   const p = document.createElement("p");
   const time = ts ? new Date(ts).toLocaleTimeString() : new Date().toLocaleTimeString();
-  p.innerHTML = `<span class="muted">${time}</span> <strong>${escapeHtml(sender)}:</strong> ${escapeHtml(message)}`;
+  p.innerHTML = `<span class="muted">${time}</span> <strong>${escapeHtml(sender)}</strong> ${escapeHtml(message)}`;
   chat.appendChild(p);
   chat.scrollTop = chat.scrollHeight;
 }
@@ -43,9 +45,6 @@ document.getElementById("sendBtn").onclick = () => {
 document.getElementById("msg").addEventListener("keydown", e => {
   if (e.key === "Enter") document.getElementById("sendBtn").click();
 });
-
-const nickInput = document.getElementById("nickname");
-const setNickBtn = document.getElementById("setNickBtn");
 
 setNickBtn.addEventListener("click", () => {
   const nickname = nickInput.value.trim();
