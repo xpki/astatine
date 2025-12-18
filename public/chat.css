@@ -1,0 +1,62 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #000000;
+  color: #cfcfcf;
+  font-family: "DejaVu Sans Mono", "Liberation Mono", Consolas, monospace;
+  font-size: 13px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#onlineCount {
+  background: #111;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-bottom: 1px solid #222;
+}
+
+#chat {
+  flex: 1;
+  padding: 6px 8px;
+  overflow-y: auto;
+}
+
+#chat p {
+  margin: 0;
+  padding: 0;
+  line-height: 1.35;
+}
+
+#inputBar {
+  display: flex;
+  align-items: center;
+  background: #000;
+  border-top: 1px solid #222;
+}
+
+#msg {
+  flex: 1;
+  padding: 6px 8px;
+  background: #000;
+  color: #e0e0e0;
+  border: none;
+  font-family: inherit;
+  font-size: 13px;
+}
+
+#msg::placeholder {
+  color: #444;
+}
+
+#msg:focus {
+  outline: none;
+}
+
+#sendBtn {
+  display: none;
+}
