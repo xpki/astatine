@@ -37,7 +37,6 @@ body {
   outline: 2px solid #555;
 }
 
-/* Games grid */
 .games-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
