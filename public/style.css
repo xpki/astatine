@@ -12,33 +12,27 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow: hidden; 
+  overflow: hidden;
+  padding: 0;
 }
 
 #row {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  width: 100%;
+  gap: 16px;
   padding: 8px 16px;
-  gap: 8px;
-  position: sticky;  
+  width: 100%;
+  position: sticky;
   top: 0;
   z-index: 100;
-  margin: auto;
+  background: #000;
 }
 
 #urlControls {
   display: flex;
   align-items: center;
   gap: 8px;
-  flex-wrap: wrap;
-}
-
-#pageButtons {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  margin-left: auto;
 }
 
 #urlInput {
@@ -60,8 +54,7 @@ body {
   outline: 2px solid #555;
 }
 
-#searchButton,
-#pageButtons button {
+#searchButton {
   padding: 6px 12px;
   background: #111;
   color: #cfcfcf;
@@ -71,8 +64,7 @@ body {
   font-size: 13px;
 }
 
-#searchButton:hover,
-#pageButtons button:hover {
+#searchButton:hover {
   background: #222;
 }
 
@@ -83,42 +75,43 @@ body {
   border: 1px solid #222;
   font-family: inherit;
   font-size: 13px;
+  min-width: 140px;
+  width: auto;
+  cursor: pointer;
 }
 
 #iframeWindow {
   flex: 1;
   width: 100%;
-  margin-top: 0;
   background: #000;
   border: 1px solid #222;
 }
 
 #iframeWindow.expanded {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    border-radius: 0;
-    z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  z-index: 999;
 }
 
 .iframe-control {
-    padding: 6px 12px;
-    background: #111;
-    color: #cfcfcf;
-    border: 1px solid #222;
-    cursor: pointer;
-    font-family: inherit;
-    font-size: 13px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  padding: 6px 12px;
+  background: #111;
+  color: #cfcfcf;
+  border: 1px solid #222;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .iframe-control:hover {
-    background: #222;
+  background: #222;
 }
 
 #bottomControl {
@@ -143,33 +136,22 @@ body {
   object-fit: contain;
 }
 
-@media (max-width: 700px) {
-  #urlInput {
-    width: 60%;
-  }
-  #pageButtons {
-    gap: 4px;
-  }
-}
-
 select {
-  width: 100%;
   padding: 8px 12px;
-  background: #111;         
-  color: #cfcfcf;            
-  border: 1px solid #222;     
-  border-radius: 4px;        
+  background: #111;
+  color: #cfcfcf;
+  border: 1px solid #222;
+  border-radius: 4px;
   font-family: "DejaVu Sans Mono", "Liberation Mono", Consolas, monospace;
   font-size: 13px;
   cursor: pointer;
-  -webkit-appearance: none; 
+  -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  margin-bottom: 16px;
 }
 
 select::-ms-expand {
-  display: none; 
+  display: none;
 }
 
 select {
@@ -195,13 +177,25 @@ label {
 }
 
 .settings-box {
-  max-width: 500px;         
+  max-width: 500px;
   width: 100%;
-  background: #111;           
+  background: #111;
   border: 1px solid #222;
   border-radius: 4px;
-  padding: 24px;              
-  margin-top: 20px;   
-  text-align: center;    
+  padding: 24px;
   margin: auto;
+  margin-top: 20px;
+  text-align: center;
 }
+
+.settings-box select {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 700px) {
+  #urlInput {
+    width: 180px;
+  }
+}
+
